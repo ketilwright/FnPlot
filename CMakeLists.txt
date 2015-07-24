@@ -15,14 +15,6 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-# Note:
-# Invoking cmake from command line. 
-#	Create a cmake cache entry: use -D <var>:<type>=value
-#	eg to select debug/release builds
-# 	Force debug build: cmake -D CMAKE_BUILD_TYPE=Debug <Path_To_CMakeLists.txt>
-# 	Force release build: cmake -D CMAKE_BUILD_TYPE=Release <Path_To_CMakeLists.txt>
-
-# tell cmake which version we require.
 cmake_minimum_required(VERSION 3.0)
 # single variable which determines output executable name
 set(ProjectName FnPlot)
@@ -69,8 +61,6 @@ include_directories(${Qt5Widgets_INCLUDES})
 # Instruct CMake to run moc automatically when needed.
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
-#set(automoc_options
-#    -i ${QCUSTOMPLOT_PATH})
 
 # output an executable from the specified sources
 add_executable(${ProjectName} ${ProjectSources} ${ProjectIncludes})
