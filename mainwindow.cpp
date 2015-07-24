@@ -10,7 +10,10 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->tableView->setModel(&m_dataSet);
-
+    // make the plot respond to mouse drag and wheel.
+    // TODO: hookup a slot to capture this & maybe update
+    // some scroll bars
+    ui->plot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom);
 }
 
 MainWindow::~MainWindow()
